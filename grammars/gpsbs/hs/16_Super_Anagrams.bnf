@@ -20,7 +20,6 @@
                         |'(max '<int>' '<int>')'
                         |'(if '<bool>' then '<int>' else '<int>')'        
                         |'(safeFromEnumCharInt '<char>')'         
-                        |'(length '<double_list>')'
                         |'(length '<string>')'
 <bool> ::= <bool_value>|<bool_expression>
 <bool_value> ::= <bool_const>
@@ -38,7 +37,7 @@
                         |'(if '<bool>' then '<char>' else '<char>')'
                         |'(safeToEnumIntChar '<int>')'
 <string> ::= <string_value>|<string_expression>
-<string_value> ::= <string_const>|<string_var>
+<string_value> ::= <string_var>
 <string_expression> ::= '('<string>' ++ '<string>')'
                         |'('<char>':'<string>')'
                         |'(filter ('<comp_op>' '<char>') '<string>')'
