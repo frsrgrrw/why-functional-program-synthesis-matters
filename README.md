@@ -21,7 +21,7 @@ GHC (Glorious Glasgow Haskell Compilation System) version 8.10.7 was used for th
 You can run all the experiments by executing the experiment script in the src folder
 
     $ cd src
-    $ ./experiments.sh
+    $ sh experiments.sh
 
 This will run all the experiments presented in the paper. The results will be written to the automatically generated results folder.
 
