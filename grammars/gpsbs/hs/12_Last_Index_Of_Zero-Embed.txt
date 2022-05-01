@@ -1,0 +1,38 @@
+{-# LANGUAGE ParallelListComp #-}
+import System.Environment
+import Functions
+
+-- problem instance input, output and error type
+type InputType = [Int]
+type OutputType = Int
+type FitnessError = Int
+
+-- test data
+inval :: [InputType]
+outval :: [OutputType]
+
+-- evolved function signature and placeholder
+evolvedFunction :: InputType -> OutputType
+evolvedFunction xs  =  <insertCodeHere>
+
+-- compares the evolved output and truth for full sample
+errors :: [InputType] -> [OutputType] -> [FitnessError]
+errors ins outs = [ ff i o | i <- ins | o <- outs]
+    where ff a b = abs (evolvedFunction a - b)
+
+
+-- calculates if an example is a correct program based on its error 
+singleExamplePassedCase :: FitnessError -> Bool
+singleExamplePassedCase a
+    | a == 0        = True
+    | otherwise     = False
+
+-- collates all passed cases
+passedCases :: [FitnessError] -> [Bool]
+passedCases = map singleExamplePassedCase
+
+caseQuality = errors inval outval
+cases = passedCases caseQuality
+quality = sum (map fromIntegral caseQuality) -- incase of overflow
+
+main = putStrLn $ "{\"quality\": " ++ show quality ++  ", \"cases\": " ++ show cases ++  ", \"caseQuality\": " ++ show caseQuality ++  "}"

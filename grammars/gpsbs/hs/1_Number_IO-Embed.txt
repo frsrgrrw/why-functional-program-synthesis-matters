@@ -1,0 +1,45 @@
+{-# LANGUAGE ParallelListComp #-}
+import System.Environment
+import GHC.Float.RealFracMethods (roundDoubleInteger)
+import Functions
+
+-- problem instance input, output and error type
+type InputType = (Int, Double)
+type OutputType = Double
+type FitnessError = Double
+
+-- test data
+inval :: [InputType]
+outval :: [OutputType]
+
+-- evolved function signature and placeholder
+evolvedFunction :: Int -> Double -> Double
+evolvedFunction a b = <insertCodeHere>
+
+-- compares the evolved output and truth for full sample
+errors :: [InputType] -> [OutputType] -> [FitnessError] 
+errors ins outs = [ ff i o | i <- ins | o <- outs] 
+    where 
+        ff (a1, a2) b = abs (evolvedFunction a1 a2 - b)
+
+-- calculates if an example is a correct program based on its error 
+singleExamplePassedCase :: FitnessError -> Bool
+singleExamplePassedCase a
+    | a <= 0.000000001 = True
+    | otherwise        = False
+
+-- collates all passed cases
+passedCases :: [FitnessError] -> [Bool]
+passedCases = map singleExamplePassedCase
+
+preventOverflowButKeepFitness :: Double -> Integer
+preventOverflowButKeepFitness d
+    | d <= 0.000000001 = 0
+    | d < 0.6          = 1
+    | otherwise        = roundDoubleInteger d
+
+caseQuality = errors inval outval
+cases = passedCases caseQuality
+quality = sum (map preventOverflowButKeepFitness caseQuality)
+
+main = putStrLn $ "{\"quality\": " ++ show quality ++  ", \"cases\": " ++ show cases ++  ", \"caseQuality\": " ++ show caseQuality ++  "}"

@@ -1,0 +1,48 @@
+<code> ::= <bool>
+<number> ::= <num><num><num>|'(-'<num><num><num>')'
+<num> ::= '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
+<char_const> ::= "'"<char_literal>"'"
+<bool_const> ::= 'True'|'False'
+<char_literal> ::= ' ' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | '[' | ']' | '^' | '_' | '`' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '{' | '|' | '}'
+<string_var> ::= 'cs'|'ds'
+<bool_op> ::= '&&'|'||'
+<arith_ops> ::= '+'|'-'|'*'
+<int_arith_ops_protected> ::= 'safeIntDiv'|'safeMod'
+<prefix> ::= ''|'-'
+<comp_op> ::= '=='|'/='|'<'|'>'|'>='|'<='
+<int> ::= <int_value>|<int_expression>
+<int_value> ::= <number>
+<int_expression> ::= '('<prefix>' '<int>')'
+                        |'(abs '<int>')'
+                        |'(('<arith_ops>') '<int>' '<int>')'
+                        |'('<int_arith_ops_protected>' '<int>' '<int>')'
+                        |'(min '<int>' '<int>')'
+                        |'(max '<int>' '<int>')'
+                        |'(if '<bool>' then '<int>' else '<int>')'        
+                        |'(safeFromEnumCharInt '<char>')'         
+                        |'(length '<double_list>')'
+                        |'(length '<string>')'
+<bool> ::= <bool_value>|<bool_expression>
+<bool_value> ::= <bool_const>
+<bool_expression> ::= '(not '<bool>')'|'( '<bool>' '<bool_op>' '<bool>' )'
+                        |'(if '<bool>' then '<bool>' else '<bool>')'
+                        |'(even '<int>')'|'(odd '<int>')'
+                        |'('<int>' '<comp_op>' '<int>')'
+                        |'('<string>' '<comp_op>' '<string>')'
+                        |'('<char>' '<comp_op>' '<char>')'
+                        |'(null '<string>')'
+<char> ::= <char_value>|<char_expression>
+<char_value> ::= <char_const>
+<char_expression> ::= '(safeHeadChars '<string>')'
+                        |'(safeLastChars '<string>')'
+                        |'(if '<bool>' then '<char>' else '<char>')'
+                        |'(safeToEnumIntChar '<int>')'
+<string> ::= <string_value>|<string_expression>
+<string_value> ::= <string_const>|<string_var>
+<string_expression> ::= '('<string>' ++ '<string>')'
+                        |'('<char>':'<string>')'
+                        |'(filter ('<comp_op>' '<char>') '<string>')'
+                        |'(if '<bool>' then '<string>' else '<string>')'
+                        |'(safeReplicate '<int>' '<char>')'
+                        |'(safeTail '<string>')'
+                        |'(safeInit '<string>')'

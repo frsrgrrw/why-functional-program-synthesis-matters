@@ -1,0 +1,30 @@
+<code> ::= <bool>
+<bool_const> ::= 'True'|'False'
+<string_var> ::= 's1'|'s2'|'s3'
+<bool_op> ::= '&&'|'||'
+<arith_ops> ::= '+'|'-'|'*'
+<int_arith_ops_protected> ::= 'safeIntDiv'|'safeMod'
+<prefix> ::= ''|'-'
+<comp_op> ::= '=='|'/='|'<'|'>'|'>='|'<='
+<int> ::= '('<prefix>' '<int>')'
+                        |'(abs '<int>')'
+                        |'(('<arith_ops>') '<int>' '<int>')'
+                        |'('<int_arith_ops_protected>' '<int>' '<int>')'
+                        |'(min '<int>' '<int>')'
+                        |'(max '<int>' '<int>')'
+                        |'(if '<bool>' then '<int>' else '<int>')'
+                        |'(length '<string>')'
+<bool> ::= <bool_value>|<bool_expression>
+<bool_value> ::= <bool_const>
+<bool_expression> ::= '(not '<bool>')'|'( '<bool>' '<bool_op>' '<bool>' )'
+                        |'(if '<bool>' then '<bool>' else '<bool>')'
+                        |'(even '<int>')'|'(odd '<int>')'
+                        |'('<int>' '<comp_op>' '<int>')'
+                        |'('<string>' '<comp_op>' '<string>')'
+                        |'(null '<string>')'
+<string> ::= <string_value>|<string_expression>
+<string_value> ::= <string_var>
+<string_expression> ::= '('<string>' ++ '<string>')'
+                        |'(if '<bool>' then '<string>' else '<string>')'
+                        |'(safeTail '<string>')'
+                        |'(safeInit '<string>')'

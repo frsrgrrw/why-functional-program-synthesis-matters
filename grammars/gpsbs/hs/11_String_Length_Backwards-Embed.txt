@@ -1,0 +1,45 @@
+{-# LANGUAGE ParallelListComp #-}
+import System.Environment
+import Functions
+
+-- problem instance input, output and error type
+type InputType = [String]
+type OutputType = [Int]
+type FitnessError = [Int]
+
+-- test data
+inval :: [InputType]
+outval :: [OutputType]
+
+-- evolved function signature and placeholder
+evolvedFunction :: InputType -> OutputType
+evolvedFunction xs = <insertCodeHere>
+
+-- compares the evolved output and truth for full sample
+errors :: [InputType] -> [OutputType] -> [FitnessError]
+errors ins outs = [ fitnessFunction i o | i <- ins | o <- outs]
+
+fitnessFunction :: InputType -> OutputType -> [Int]
+fitnessFunction a b =
+    let evolvedOutput = evolvedFunction a
+    in [abs (f - s) | (f, s) <- zip evolvedOutput b]  ++ extraBit evolvedOutput b
+    where
+        extraBit evolved truth
+            | length truth > length evolved = replicate (length truth - length evolved) 50 ++ [0]
+            | otherwise                     = replicate (length evolved - length truth) 50
+
+-- calculates if an example is a correct program based on its error 
+singleExamplePassedCase :: FitnessError -> Bool
+singleExamplePassedCase error
+    | all (==0) error = True
+    | otherwise       = False
+
+-- collates all passed cases
+passedCases :: [FitnessError] -> [Bool]
+passedCases = map singleExamplePassedCase
+
+caseQuality = errors inval outval
+cases = passedCases caseQuality
+quality = sum (map (sum . map fromIntegral) caseQuality)
+
+main = putStrLn $ "{\"quality\": " ++ show quality ++  ", \"cases\": " ++ show cases ++  ", \"caseQuality\": " ++ show caseQuality ++  "}"
