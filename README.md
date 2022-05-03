@@ -22,6 +22,8 @@ You can run all the experiments by executing the experiment script in the src fo
 
     $ cd src
     $ sh experiments.sh
+    $ cd ..
+    $ python3 results_checker.py
 
 This will run all the experiments presented in the paper. The results will be written to the automatically generated results folder.
 

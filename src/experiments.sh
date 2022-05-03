@@ -179,3 +179,4 @@ sed -i "s/set_tree_nodes/250/g" ../parameters/temp.txt
 sed -i "s/language/py/g" ../parameters/temp.txt
 sed -i "s/haskell_flag/False/g" ../parameters/temp.txt
 python3 scripts/experiment_manager.py --experiment_name experiment_script/py/28_Smallest --runs 100 --parameters temp.txt
+
