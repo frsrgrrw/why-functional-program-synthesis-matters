@@ -6,6 +6,7 @@
 - [ ] update link to GECCO/ ACM article
 - [ ] publish as release v1.0 on github 
 - [ ] copy across webiste with code artefacts to this github page (github IO website)
+- [ ] remove 'seeds' folder? and other superfluous ponyge2 files?
 
 
 # Introduction
