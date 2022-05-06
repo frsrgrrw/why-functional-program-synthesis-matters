@@ -1,10 +1,20 @@
+# TODO
+
+- [] update license
+- [] when publishing as public, fork PonyGE2, copy code form here into that repo and then push
+- [] link to Zenodo
+- [] update link to GECCO/ ACM article
+- [] publish as release v1.0 on github 
+- [] copy across webiste with code artefacts to this github page (github IO website)
+
+
 # Introduction
 
 This repository contains the all relevant materials to perform the experiments presented in [Why Functional Program Synthesis Matters (In The Realm of Genetic Programming)](www.gecco-link-when-it-goes-live.com) [1]. The experiments are carried out using the PonyGE2 GE implementation [2] in the CFG-GP form. The problems are from the Program Synthesis Benchmark Suite [3] (the data was taken from the PonyGE2 repository).
 
 # Requirements
 
-We assume a unix OS, the code was run/tested on Pop_OS!-20.04/Ubuntu-20.04.
+We assume a unix OS, the code was run/tested on Pop_OS!-20.04 (Ubuntu derivative).
 
 Python 3.5 (or higher) is required, Python 3.8.10 was used for the reported results. The Python packages required are: matplotlib, numpy, scipy, scikit-learn (sklearn), pandas, which can be installed as follows via your favourite terminal emulator:
 
@@ -22,8 +32,6 @@ You can run all the experiments by executing the experiment script in the src fo
 
     $ cd src
     $ sh experiments.sh
-    $ cd ..
-    $ python3 results_checker.py
 
 This will run all the experiments presented in the paper. The results will be written to the automatically generated results folder.
 
