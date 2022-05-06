@@ -41,7 +41,7 @@ Possible problems: make sure 'runhaskell' is available on your system path.
 
 This work is published under ....
 
-For PonyGE2 see PonyGE2-README.md
+For PonyGE2 see PonyGE2-LICENSE
 
 # References
 
