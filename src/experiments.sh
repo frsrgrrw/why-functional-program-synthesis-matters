@@ -58,13 +58,13 @@ sed -i "s/language/hs/g" ../parameters/temp.txt
 sed -i "s/haskell_flag/True/g" ../parameters/temp.txt
 python3 scripts/experiment_manager.py --experiment_name experiment_script/hs/16_Super_Anagrams --runs 100 --parameters temp.txt
 
-sed 's/prog_synth_problem_name/18_Vector_Summed/g' ../parameters/gpsbs_template.txt > ../parameters/temp.txt
+sed 's/prog_synth_problem_name/18_Vectors_Summed/g' ../parameters/gpsbs_template.txt > ../parameters/temp.txt
 sed -i "s/number_of_generations/100/g" ../parameters/temp.txt
 sed -i "s/pop_size/1000/g" ../parameters/temp.txt
 sed -i "s/set_tree_nodes/250/g" ../parameters/temp.txt
 sed -i "s/language/hs/g" ../parameters/temp.txt
 sed -i "s/haskell_flag/True/g" ../parameters/temp.txt
-python3 scripts/experiment_manager.py --experiment_name experiment_script/hs/18_Vector_Summed --runs 100 --parameters temp.txt
+python3 scripts/experiment_manager.py --experiment_name experiment_script/hs/18_Vectors_Summed --runs 100 --parameters temp.txt
 
 sed 's/prog_synth_problem_name/21_Negative_To_Zero/g' ../parameters/gpsbs_template.txt > ../parameters/temp.txt
 sed -i "s/number_of_generations/100/g" ../parameters/temp.txt
@@ -148,13 +148,13 @@ sed -i "s/language/py/g" ../parameters/temp.txt
 sed -i "s/haskell_flag/False/g" ../parameters/temp.txt
 python3 scripts/experiment_manager.py --experiment_name experiment_script/py/16_Super_Anagrams --runs 100 --parameters temp.txt
 
-sed 's/prog_synth_problem_name/18_Vector_Summed/g' ../parameters/gpsbs_template.txt > ../parameters/temp.txt
+sed 's/prog_synth_problem_name/18_Vectors_Summed/g' ../parameters/gpsbs_template.txt > ../parameters/temp.txt
 sed -i "s/number_of_generations/100/g" ../parameters/temp.txt
 sed -i "s/pop_size/1000/g" ../parameters/temp.txt
 sed -i "s/set_tree_nodes/250/g" ../parameters/temp.txt
 sed -i "s/language/py/g" ../parameters/temp.txt
 sed -i "s/haskell_flag/False/g" ../parameters/temp.txt
-python3 scripts/experiment_manager.py --experiment_name experiment_script/py/18_Vector_Summed --runs 100 --parameters temp.txt
+python3 scripts/experiment_manager.py --experiment_name experiment_script/py/18_Vectors_Summed --runs 100 --parameters temp.txt
 
 sed 's/prog_synth_problem_name/21_Negative_To_Zero/g' ../parameters/gpsbs_template.txt > ../parameters/temp.txt
 sed -i "s/number_of_generations/100/g" ../parameters/temp.txt
@@ -180,3 +180,5 @@ sed -i "s/language/py/g" ../parameters/temp.txt
 sed -i "s/haskell_flag/False/g" ../parameters/temp.txt
 python3 scripts/experiment_manager.py --experiment_name experiment_script/py/28_Smallest --runs 100 --parameters temp.txt
 
+cd ..
+python3 compile_results.py
