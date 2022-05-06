@@ -45,6 +45,6 @@ For PonyGE2 see PonyGE2-README.md
 
 # References
 
-1. Garrow, F., Lones, M.A., and Stewart, R., Why Functional Program Synthesis Matters (In The Realm of Genetic Programming). 3. T. Helmuth and L. Spector. General Program Synthesis Benchmark Suite. In GECCO '22: Proceedings of the 23rd annual conference on Genetic and evolutionary computation. July 2022. ACM.
+1. Garrow, F., Lones, M.A., and Stewart, R., Why Functional Program Synthesis Matters (In The Realm of Genetic Programming). In GECCO '22: Proceedings of the 23rd annual conference on Genetic and evolutionary computation. July 2022. ACM.
 2. Fenton, M., McDermott, J., Fagan, D., Forstenlechner, S., Hemberg, E., and O'Neill, M. PonyGE2: Grammatical Evolution in Python. arXiv preprint, arXiv:1703.08535, 2017.
 3. T. Helmuth and L. Spector. General Program Synthesis Benchmark Suite. In GECCO '15: Proceedings of the 17th annual conference on Genetic and evolutionary computation. July 2015. ACM.
