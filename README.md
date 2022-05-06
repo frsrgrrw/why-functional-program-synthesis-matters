@@ -1,11 +1,11 @@
 # TODO
 
-- [] update license
-- [] when publishing as public, fork PonyGE2, copy code form here into that repo and then push
-- [] link to Zenodo
-- [] update link to GECCO/ ACM article
-- [] publish as release v1.0 on github 
-- [] copy across webiste with code artefacts to this github page (github IO website)
+- [ ] update license
+- [ ] when publishing as public, fork PonyGE2, copy code form here into that repo and then push
+- [ ] link to Zenodo
+- [ ] update link to GECCO/ ACM article
+- [ ] publish as release v1.0 on github 
+- [ ] copy across webiste with code artefacts to this github page (github IO website)
 
 
 # Introduction
