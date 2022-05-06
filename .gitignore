@@ -1,5 +1,6 @@
 results/
 src/hs_exec_dir/
+src/parameters/temp.txt
 
 # Haskell
 dist
