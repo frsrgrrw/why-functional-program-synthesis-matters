@@ -1,4 +1,4 @@
-# WFPSM
+# why functional program synthesis matters
 
 This site archives the evolved artefacts from our work, [Why Functional Program Synthesis Matters (In The Realm of Genetic Programming)](https://dl.acm.org/doi/10.1145/3520304.3534045) [1], which investigates the use of a purely functional language for evolved code using Genetic Programming (GP) to solve program synthesis problems, see the paper [here](https://researchportal.hw.ac.uk/en/publications/why-functional-program-synthesis-matters-in-the-realm-of-genetic-). The code can be accessed via the GitHub repo linked to this page or at the Zenodo record [here](https://zenodo.org/record/6499027).
 
